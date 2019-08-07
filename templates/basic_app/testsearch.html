@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+      <link rel="stylesheet" href="{% static 'css/myStyle.css' %}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+      <script type="text/javascript">
+      $(document).ready(function(){
+        $(function() {
+          $("#search").autocomplete({
+            source: "{% url 'ajax_load_project' %}",
+            minLength: 2,
+          });
+        });
+      });
+     </script>
+  </head>
+  <body>
+    <center>
+    <p><b>
+         <span class='m'>M</span>
+         <span class='o'>o</span>
+         <span class='v'>v</span>
+         <span class='i'>i</span>
+         <span class='e'>e</span>
+         <span class='s'>s</span>
+       </b></p>
+    <div class="ui-widget">
+      <form class="form-inline mr-auto" method="get" action="{% url 'movielist' %}">
+        <input class="form-control mr-sm-2" type="text" placeholder="Enter a movie name" aria-label="Search"  name="search" id='search' >
+        <button  type="submit">Search</button>
+        <div id="selction-ajax"></div>
+      </form>
+      <br>
+      <br>
+    </div>
+
+
+    <div class='res'>
+      {% if movie_context %}
+        {% for k in movie_context %}
+        <table border='0px' width='400px'>
+          <tr>
+            <td class="m1">Movie:<td>
+            <td>{{k.name}}</td>
+          </tr>
+          <tr >
+            <td class="m2">Titleid:<td>
+            <td>{{k.titleid}}</td>
+          </tr>
+          <tr>
+            <td class="m3">Rating:<td>
+            <td>{{k.rating}}</td>
+          </tr>
+          <tr>
+            <td class="m4">Cast:<td>
+            <td>{{k.cast}}</td>
+          </tr>
+        </table>
+        <br><br>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </center>
+
+  </body>
+</html>

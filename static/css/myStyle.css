@@ -1,0 +1,22 @@
+.m{color: #4285f4; font-size: 65px;}
+.o{color: #ea4335; font-size: 65px;}
+.v{color: #fbbc05; font-size: 65px;}
+.i{color: #4285f4; font-size: 65px;}
+.e{color: #34a853; font-size: 65px;}
+.s{color: #ea4335; font-size: 65px;}
+
+p{
+  font-family: Times;
+  margin-top: 100px;
+  white-space: nowrap;
+  font-size: 0px;
+  margin-bottom: 35px ;
+}
+
+.res{
+  font-family: times, serif; font-size:14pt;
+}
+.m1{color: #4285f4; font-weight: bold;}
+.m2{color: #ea4335; font-weight: bold;}
+.m3{color: #fbbc05; font-weight: bold;}
+.m4{color: #34a853; font-weight: bold;}
