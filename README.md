@@ -1,6 +1,6 @@
 # Autocomplete Search API
 
-This Project demonstrates creating an website where an user can search for a movie name and see information like movie name, rating and cast for the same.
+This Project demonstrates creating a website where an user can search for a movie name and see information like movie name, rating and cast for the same.
 
 # Backend Developement:
 ## Scraping IMDB Website:
